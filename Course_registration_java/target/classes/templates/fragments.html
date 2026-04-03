@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+  <meta charset="UTF-8">
+  <title th:text="${title}">Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:8px; border:1px solid #111; text-decoration:none; }
+    .muted { color:#6b7280; font-size: 0.95rem; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px;}
+  </style>
+</head>
+<body>
+<div th:fragment="topbar(title)">
+  <div class="topbar">
+    <h2 th:text="${title}">Title</h2>
+    <form method="post" action="/logout"><button class="btn" type="submit">로그아웃</button></form>
+  </div>
+  <hr/>
+</div>
+</body>
+</html>

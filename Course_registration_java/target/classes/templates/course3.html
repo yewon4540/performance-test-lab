@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(${title})"></head>
+<body>
+  <div th:replace="fragments :: topbar(${title})"></div>
+
+  <h3 th:text="${summary}">요약</h3>
+  <table class="card" style="width:100%;border-collapse:collapse;">
+    <thead>
+      <tr><th>주제</th><th>설명</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>정규화</td><td>중복 최소화 및 이상(anomaly) 방지</td></tr>
+      <tr><td>인덱스</td><td>B-Tree, 선택도, 커버링 인덱스</td></tr>
+      <tr><td>트랜잭션</td><td>ACID, 격리수준</td></tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li th:each="b : ${bullets}" th:text="${b}">포인트</li>
+  </ul>
+
+  <a class="btn" href="/course">목록으로</a>
+</body>
+</html>

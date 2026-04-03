@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head('수강 신청')"></head>
+<body>
+  <div th:replace="fragments :: topbar('수강 신청')"></div>
+
+  <div class="grid">
+    <div class="card" th:each="c : ${courses}">
+      <h3 th:text="${c.name}">강의명</h3>
+      <p class="muted" th:text="${c.description}">설명</p>
+      <a class="btn" th:href="@{|/course/${c.id}|}">강의 상세</a>
+    </div>
+  </div>
+</body>
+</html>

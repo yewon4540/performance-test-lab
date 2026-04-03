@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head('로그인')"></head>
+<body>
+  <h2>로그인</h2>
+  <p class="muted">테스트 계정: <b>user / 1234</b></p>
+  <form method="post" action="/login">
+    <div><input name="username" placeholder="아이디" required/></div>
+    <div><input name="password" type="password" placeholder="비밀번호" required/></div>
+    <button class="btn" type="submit">로그인</button>
+  </form>
+  <p th:if="${error}" th:text="${error}" style="color:#ef4444;margin-top:8px;"></p>
+</body>
+</html>
